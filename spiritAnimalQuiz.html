@@ -9,13 +9,24 @@
     <script>
 function firstFunc(){
 
-    document.getElementById("content").innerHTML = 'Change to my new content';
+html= "<p>Hey! Your spirit animal is a sloth!</p><img src='sloth.jpg'>";
+    document.getElementById("content").innerHTML = html;
 
+}
+
+function button2(){
+
+    html= "<img src='baby'>"
+    document.getElementById("content").innerHTML = 'new content';
 }
 
     </script>
 
     <style>
+        .assessment{
+            background-color: red;
+        }
+
         #content{
             background-color: yellow;
         }
@@ -26,11 +37,13 @@ function firstFunc(){
     <h1>Spirit Animal Quiz</h1>
 
     <button onclick="firstFunc()">Button 1</button>
-    <button>Button 2</button>
+    <button onclick="button2()">Button 2</button>
     <button>Button 3</button>
 
+    <div class="assessment">
+        <h3>Assessment</h3>
     <div id="content">
-Add content here
+    </div>
     </div>
 </body>
 
