@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        body{
+        background-color: #ff7b00;
+        }
+
+        
+    </style>
+
+    <script>
+var myFirstVariable = "valuehere";
+
+        var myFirstArray = ["kitten", "alpaca", "3"];
+
+        var mySeconArray = [1, 2, 3];
+        /*
+        alert(myFirstArray[2]);
+        console.log(myFirstArray);
+        */
+
+        var colors = ["#ff0000", "#387a24", "#ff7b00"];
+
+function moodChange(){
+var buttonVal = document.getElementById("moodButton");
+alert("hello");
+
+if (buttonVal.value == 0){
+    document.body.style.backgroundColor = colors[0];
+    buttonVal.value = 1;
+}
+else{
+     document.body.style.backgroundColor = colors[1];
+    buttonVal.value = 0;
+
+}
+}
+
+function moodChange2(){
+    var buttonVal = document.getElementById("moodButton");
+value = buttonVal.value;
+    switch(value){
+        case "0"
+            document.body.style.backgroundColor = colors[0];
+            break;
+            case "1"
+             document.body.style.backgroundColor = colors[1];
+              break;
+              default:  
+                           document.body.style.backgroundColor = "grey";
+
+    }
+}
+</script>
+</head>
+<body>
+    <button onclick="moodChange()" id="moodButton">click me</button>
+</body>
+</html>
