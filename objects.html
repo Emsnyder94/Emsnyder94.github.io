@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Writing Objects</title>
+    <script>
+        var fruit = ['apple', 'orange', 'pear'];
+        alert(fruit[0]);
+
+        var student ={
+            name: 'Liz',
+            major: 'math',
+            courses: 'five courses',
+            year: 'senior',
+            notice: function(){
+                alert("I am a student studying " + this.major);
+            }
+        }
+
+function studentVersion(name, major, courses, year){
+    this.name = name;
+    this.major = major;
+    this.courses = courses;
+    this.year = year;
+    this.notice = function(){
+        alert(this.name + "is studying" + this.major + "she is a" + this.year + "and is taking" + this.courses);
+    }
+}
+
+var lizStudent = new studentVersion('Liz', 'math', 'five courses', 'senior');
+
+console.log(lizStudent);
+
+for(x in lizStudent){
+    console.log(lizStudent[x]);
+}
+
+        alert(student['year']);
+        alert(student.courses);
+
+        console.log(student);
+    </script>
+</head>
+<body>
+    <button onclick="student.notice()">Click Here</button>
+</body>
+</html>
