@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const remainingTimeDisplay = document.querySelector('#time-left');
+        const startButton = document.querySelector('#start-button');
+        timeLeft = 30;
+
+        function countDown() {
+            setInterval(function () {
+                if (timeLeft <= 0) {
+                    clearInterval(timeLeft = 0);
+                }
+
+                remainingTimeDisplay.innerHTML = timeLeft;
+                timeLeft -= 1;
+            }, 1000);
+        }
+        startButton.addEventListener('click', countDown);
+    })
+
+
+function check(){
+    alert("HELLO!!! YOU ARE AWESOME!!");
+
+    var q1 =document.quiz.question1.value;
+    var q1 = document.quiz.question2.value;
+    var q1 = document.quiz.question3.value;
+    var q1 = document.quiz.question4.value;
+    var q1 = document.quiz.question5.value;
+    var correct = 0;
+
+    if (question1 == "Mexico"){
+        correct ++;
+    }
+
+
+    if (question2 == "India") {
+        correct++;
+    }
+
+
+    if (question3 == "Chile") {
+        correct++;
+    }
+
+
+    if (question4 == "Portugal") {
+        correct++;
+    }
+
+
+    if (question5 == "Italy") {
+        correct++;
+    }
+
+    var message = ["Nice job!", "Not bad.", "Better luck next time"];
+    var pics = ["Gifs/happy.gif", "Gifs/not-bad.gif", "Gifs/better-luck-next-time.gif"];
+
+    var range;
+    if (correct < 3) {
+        range = 2;
+    }
+
+    if (correct > 1 && correct < 3) {
+        range = 1;
+    }
+
+    if (correct > 3) {
+        range = 0;
+    }
+
+    document.getElementById("submit").style.visibility = "visible";
+    document.getElementById("score").innerHTML = "Your score is" + correct;
+    document.getElementById("message").innerHTML = message[range];
+    document,getElementById("pics").src = pics[range];
+}
+
+    </script>
+    <style>
+body{
+    background-color: #edd0d0;
+}
+
+h1{
+    font-size: 40px;
+    text-align: center;
+    color: #6b0d0d;
+}
+
+h2{
+    text-align: center;
+}
+
+   .timer-title{
+       font-size: 24px;
+       text-align: center;
+       color: crimson;
+   }
+
+   button{
+       background-color: burlywood;
+       border-radius: 5px;
+       padding: 15px 32px;
+       text-decoration: crimson;font-size: 16px;
+       margin: 4px 2px;
+       cursor: pointer;
+   }
+
+   .quiz{
+       width: 400px;
+       max-width: 40%;
+       background-color: darksalmon;
+       border-radius: 5px;
+       padding: 10px;
+       margin-left: 500px;
+    
+       display: grid;
+    
+   }
+
+   h3{
+       font-family: monospace;
+       font-size: 14px;
+   }
+
+#submit{
+    visibility: hidden;
+}
+
+    </style>
+</head>
+<body>
+ <h1>Do you know your countries?</h1>
+ <h2>Name the country based on it's outline</h2>
+
+</br>
+<h1 class="timer-title">Remaining Time: <span id="time-left">30</span></h1>
+<div style="text-align: center;"><button id="start-button">Start</button></div>
+</br>
+
+<form class= "quiz" name="quiz">
+<h3>What country is this?</h3>
+<img src="mexico-outline.jpg" width="100px"/>
+</br>
+<input type="radio" id="mc" name="question1" value="Canada">Canada</br>
+<input type="radio" id="mc" name="question1" value="UK">UK</br>
+<input type="radio" id="mc" name="question1" value="Mexico">Mexico</br>
+<input type="radio" id="mc" name="question1" value="Chile">Chile</br>
+
+<h3>Can you identify this country?</h3>
+<img src="india-outline.png" width="100px" />
+<input type="radio" id="mc" name="question2" value="U.S.">U.S.</br>
+<input type="radio" id="mc" name="question2" value="Brazil">Brazil</br>
+<input type="radio" id="mc" name="question2" value="India">India</br>
+<input type="radio" id="mc" name="question2" value="UK">UK</br>
+
+<h3>How about this one?</h3>
+<img src="chile-outline.jpeg" width="100px" />
+</br>
+<input type="radio" id="mc" name="question3" value="Spain">Spain</br>
+<input type="radio" id="mc" name="question3" value="Chile">Chile</br>
+<input type="radio" id="mc" name="question3" value="France">France</br>
+<input type="radio" id="mc" name="question3" value="Pakistan">Pakistan</br>
+
+<h3>Here's a tough one. Do you know it?</h3>
+<img src="uk-outline.jpg" width="100px" />
+</br>
+<input type="radio" id="mc" name="question4" value="UK">UK</br>
+<input type="radio" id="mc" name="question4" value="Cuba">Cuba</br>
+<input type="radio" id="mc" name="question4" value="Portugal">Portugal</br>
+<input type="radio" id="mc" name="question4" value="Chile">Chile</br>
+
+<h3>Last one. Can you figure it out?</h3>
+<img src="italy-outline.jpeg" width="100px"/>
+</br>
+<input type="radio" id="mc" name="question5" value="Japan">Japan</br>
+<input type="radio" id="mc" name="question5" value="Italy">Italy</br>
+<input type="radio" id="mc" name="question5" value="Libya">Libya</br>
+<input type="radio" id="mc" name="question5" value="Peru">Peru</br>
+</br>
+<input id="finish-btn" type="button" value="Done!" onclick="check();">
+</form>
+
+<div id="submit">
+<p id="score"></p>
+<p id="message"></p>
+<img id="pics">
+</div>
+</body>
+</html>
