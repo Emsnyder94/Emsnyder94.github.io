@@ -9,7 +9,11 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <script>
-   $.get("https://dog.ceo/api/breeds/list/all", callback);
+   cat = $.get("https://thatcopy.pw/catapi/rest/", function(data, status){
+     console.log(data["url"]);
+     image = "<image src=' " + "'>";
+      $("#message").append(image);
+   });
      
 
     </script>
